@@ -7,12 +7,13 @@
         <title>Document</title>
     </head>
     <body>
-        <h1>Membros equipe de DEV UninCor:</h1>
-        {% for nome in listNomes %}
-            <h4>{{ nome }}</h4>
-        {% endfor %}
-        <h1>Agora são:</h1>
-            <h4>{{data}}</h4>
-            
+        <form method="POST">
+        {%csrf_token%}
+        {{form.as_p}}
+            <button type="submit">salvar</button>
+            <a href="{%url 'url_delete' transacao.id%}">delete</a>
+        </form>
+
+
     </body>
 </html>

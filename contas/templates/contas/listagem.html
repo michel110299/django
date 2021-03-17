@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>Transações</h1>
+        {%for t in trasacoes%}
+            <ul>
+              <h3> <a href="{% url 'url_update' t.id%}">{{t.Descricao}}</a></h3>
+                <li>{{t.Data}}</li>
+                <li>{{t.Valor}}</li>
+                <li>{{t.categoria}}</li> 
+                <li>{{t.observacoes}}</li> 
+            </ul>
+            {% endfor %}
+        <a href="{% url 'url_nova' %}">voltar</a>
+    </body>
+</html>
